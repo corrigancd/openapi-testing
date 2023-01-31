@@ -1,15 +1,10 @@
 // src/app.ts
-import express, {json, urlencoded} from "express";
+import * as Hapi from '@hapi/hapi';
+// @ts-ignore
 import { RegisterRoutes } from "../build/routes";
 
-export const app = express();
-
-// Use body parser to read sent json payloads
-app.use(
-  urlencoded({
-    extended: true,
-  })
-);
-app.use(json());
-
-RegisterRoutes(app);
+export const app = (port = 3000): Hapi.Server => {
+  const server = Hapi.server({ host: 'localhost', port });
+  RegisterRoutes(server);
+  return server;
+}
