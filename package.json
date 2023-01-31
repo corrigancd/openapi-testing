@@ -7,7 +7,6 @@
 	"dependencies": {
 		"@hapi/hapi": "^21.2.1",
 		"@redocly/cli": "^1.0.0-beta.122",
-		"express": "^4.18.2",
 		"redoc-cli": "^0.13.20",
 		"tsoa": "^5.0.0",
 		"widdershins": "^4.0.1"
