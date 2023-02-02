@@ -6,6 +6,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@hapi/hapi": "20.x.x",
+		"@openapitools/openapi-generator-cli": "^2.5.2",
 		"@redocly/cli": "^1.0.0-beta.122",
 		"redoc-cli": "^0.13.20",
 		"tsoa": "^5.0.0",
