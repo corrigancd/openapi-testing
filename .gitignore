@@ -105,5 +105,5 @@ dist
 
 # custom
 build
-# widdershins-output/**
-# openapi-generator-cli-output/**
+widdershins-output/**
+openapi-generator-cli-output/**
