@@ -22,4 +22,4 @@ Open sample on:
 Preview markdown file generated in `widdershins-output/openapi.md` as you would, e.g. AsciiDoc VS Code extension
 
 ## Generating as adoc using @openapitools/openapi-generator-cli
-`npx @openapitools/openapi-generator-cli generate -i ./build/swagger.json -g asciidoc -o ./openapi-generator-cli-output `
+`npx @openapitools/openapi-generator-cli generate -i ./build/swagger.json -g asciidoc -o ./openapi-generator-cli-output`
