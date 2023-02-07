@@ -8,16 +8,17 @@ import {
   Route,
   SuccessResponse,
 } from "tsoa";
-import { SavedSearch } from "./types";
+import { SavedSearch_14_0_0 } from "./types";
 
 import { SavedSearchService } from './saved_search_service'
 
+
 @Route("api/saved_objects/search")
-export class SavedSearchController extends Controller {
+export class SavedSearchController_14_0_0 extends Controller {
   @SuccessResponse("201", "Created") // Custom success response
-  @Post('create')
+  @Post('create/14.0.0')
   public async createSavedSearch(
-    @Body() requestBody: SavedSearch
+    @Body() requestBody: SavedSearch_14_0_0
   ): Promise<string> {
     try {
       // in case we need to do some logic with the request bodies
@@ -26,20 +27,6 @@ export class SavedSearchController extends Controller {
       return 'SUCCESS ' + 201; 
     } catch (e: any) {
       this.setStatus(e.status)
-      throw e;
-    }
-  }
-
-  @Post('fail')
-  public async createSavedSearchFail(
-    @Body() requestBody: SavedSearch
-  ): Promise<string> {
-    try {
-      // in case we need to do some logic with the request bodies
-      new SavedSearchService().fail();
-      this.setStatus(201); // set return status 201
-      return 'SUCCESS ' + 201; 
-    } catch (e: any) {
       throw e;
     }
   }

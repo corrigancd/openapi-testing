@@ -107,3 +107,4 @@ dist
 build
 widdershins-output/**
 openapi-generator-cli-output/**
+.vscode

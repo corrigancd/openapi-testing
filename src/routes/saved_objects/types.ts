@@ -37,7 +37,7 @@ interface GlobalSearchSettings {
   boost: number;
 }
 
-export type SavedSearchAttributes = {
+export type SavedSearchAttributes_13_2_0 = {
   title: string;
   description?: string;
   hits?: number;
@@ -85,8 +85,64 @@ export type SavedSearchAttributes = {
   version: string;
 };
 
-export type SavedSearch = {
-  attributes: SavedSearchAttributes;
+export type SavedSearchAttributes_14_0_0 = {
+  title: string;
+  description?: string;
+  hits?: number;
+  columns?: string;
+  sort?: string;
+  kibanaSavedObjectMeta: {
+    searchSourceJSON: string;
+  };
+  indexPattern: IndexPatternAttributes;
+  siren?: { // siren attribute has become optional in v14 (an example of an arbitrary change)
+    parentId: string;
+    indexingScope?: IndexingScopeString;
+    samplingScriptId?: string;
+    ui: {
+      icon: string;
+      color: string;
+      shortDescription: string;
+      instanceLabelType?: string;
+      instanceLabelValue?: string;
+      instanceImageType?: string;
+      instanceImageValue?: string;
+    };
+    limits?: {
+      maxTimeRangeEnabled: boolean;
+      maxTimeRange: number;
+      maxTimeRangeUnit: string;
+      maxCardinalityEnabled: boolean;
+      maxCardinality: number;
+      maxCardinalityUnit: string;
+      maxJoinCardinalityEnabled: boolean;
+      maxJoinCardinality: number;
+      maxJoinCardinalityUnit: string;
+      maxJoinCardinalityApplyToSource: boolean;
+      maxJoinCardinalityApplyToTarget: boolean;
+    };
+    revision?: RevisionSettings;
+    highlight?: {
+      fields: string;
+    };
+    globalSearch: GlobalSearchSettings;
+    templateScripts: {
+      scriptIds: string[];
+    };
+  };
+  version: string;
+};
+
+export type SavedSearch_13_2_0 = {
+  attributes: SavedSearchAttributes_13_2_0;
   isGlobal: boolean;
   version: string;
 }
+
+export type SavedSearch_14_0_0 = {
+  attributes: SavedSearchAttributes_14_0_0;
+  isGlobal: boolean;
+  version: string;
+}
+
+export type AllSavedSearches = SavedSearch_13_2_0 | SavedSearch_14_0_0;

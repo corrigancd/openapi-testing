@@ -1,5 +1,5 @@
 // src/users/usersService.ts
-import { SavedSearch } from './types';
+import { AllSavedSearches } from './types';
 
 const exampleSavedSearch: any = { //: SavedSearch = { // enums mess up the types for some reason
   "attributes":{
@@ -55,12 +55,11 @@ const exampleSavedSearch: any = { //: SavedSearch = { // enums mess up the types
 };
 
 export class SavedSearchService {
-  public create(savedSearch: SavedSearch): SavedSearch {
+  public create(savedSearch: AllSavedSearches): AllSavedSearches {
     return savedSearch;
   }
 
-  public fail(): SavedSearch {
+  public fail(): AllSavedSearches {
     throw new Error('example of failure on post request')
   }
 }
-
