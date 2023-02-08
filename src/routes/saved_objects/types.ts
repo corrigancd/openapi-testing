@@ -37,10 +37,19 @@ interface GlobalSearchSettings {
   boost: number;
 }
 
+// recursive range checking example. 
+// Source: https://stackoverflow.com/questions/39494689/is-it-possible-to-restrict-number-to-a-certain-range/70307091#70307091
+type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
+  ? Acc[number]
+  : Enumerate<N, [...Acc, Acc['length']]>
+
+type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+
+
 export type SavedSearchAttributes_13_2_0 = {
   title: string;
   description?: string;
-  hits?: number;
+  hits?:  Range<0, 999>;
   columns?: string;
   sort?: string;
   kibanaSavedObjectMeta: {
@@ -88,11 +97,11 @@ export type SavedSearchAttributes_13_2_0 = {
 export type SavedSearchAttributes_14_0_0 = {
   title: string;
   description?: string;
-  hits?: number;
+  hits?: Range<0, 999>;
   columns?: string;
   sort?: string;
   kibanaSavedObjectMeta: {
-    searchSourceJSON: string;
+    searchSourceJSON: string; // this will need invstigation, to see if/how to parse as a json and then validate that
   };
   indexPattern: IndexPatternAttributes;
   siren?: { // siren attribute has become optional in v14 (an example of an arbitrary change)

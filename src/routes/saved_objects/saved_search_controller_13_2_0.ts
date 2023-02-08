@@ -13,10 +13,10 @@ import { SavedSearch_13_2_0 } from "./types";
 import { SavedSearchService } from './saved_search_service'
 
 
-@Route("api/saved_objects/search")
+@Route("api/13.2.0/saved_objects/search")
 export class SavedSearchController_13_2_0 extends Controller {
   @SuccessResponse("201", "Created") // Custom success response
-  @Post('create/13.2.0')
+  @Post('create')
   public async createSavedSearch(
     @Body() requestBody: SavedSearch_13_2_0
   ): Promise<string> {
