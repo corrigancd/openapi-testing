@@ -46,7 +46,9 @@ type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] exte
 type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
 
 
-export type SavedSearchAttributes_13_2_0 = {
+type SavedObjectVersions = '13.2.0' | '14.0.0';
+
+export interface SavedSearchAttributes_13_2_0 {
   title: string;
   description?: string;
   hits?:  Range<0, 999>;
@@ -94,53 +96,9 @@ export type SavedSearchAttributes_13_2_0 = {
   version: string;
 };
 
-export type SavedSearchAttributes_14_0_0 = {
-  title: string;
-  description?: string;
-  hits?: Range<0, 999>;
-  columns?: string;
-  sort?: string;
-  kibanaSavedObjectMeta: {
-    searchSourceJSON: string; // this will need invstigation, to see if/how to parse as a json and then validate that
-  };
-  indexPattern: IndexPatternAttributes;
-  siren?: { // siren attribute has become optional in v14 (an example of an arbitrary change)
-    parentId: string;
-    indexingScope?: IndexingScopeString;
-    samplingScriptId?: string;
-    ui: {
-      icon: string;
-      color: string;
-      shortDescription: string;
-      instanceLabelType?: string;
-      instanceLabelValue?: string;
-      instanceImageType?: string;
-      instanceImageValue?: string;
-    };
-    limits?: {
-      maxTimeRangeEnabled: boolean;
-      maxTimeRange: number;
-      maxTimeRangeUnit: string;
-      maxCardinalityEnabled: boolean;
-      maxCardinality: number;
-      maxCardinalityUnit: string;
-      maxJoinCardinalityEnabled: boolean;
-      maxJoinCardinality: number;
-      maxJoinCardinalityUnit: string;
-      maxJoinCardinalityApplyToSource: boolean;
-      maxJoinCardinalityApplyToTarget: boolean;
-    };
-    revision?: RevisionSettings;
-    highlight?: {
-      fields: string;
-    };
-    globalSearch: GlobalSearchSettings;
-    templateScripts: {
-      scriptIds: string[];
-    };
-  };
-  version: string;
-};
+export interface SavedSearchAttributes_14_0_0 extends Omit<SavedSearchAttributes_13_2_0, 'version' | 'test-multiple-syntax-example'> {
+  version: SavedObjectVersions;
+}
 
 export type SavedSearch_13_2_0 = {
   attributes: SavedSearchAttributes_13_2_0;
