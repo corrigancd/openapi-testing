@@ -48,66 +48,108 @@ type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate
 
 type SavedObjectVersions = '13.2.0' | '14.0.0';
 
-export interface SavedSearchAttributes_13_2_0 {
-  title: string;
-  description?: string;
-  hits?:  Range<0, 999>;
-  columns?: string;
-  sort?: string;
-  kibanaSavedObjectMeta: {
-    searchSourceJSON: string;
-  };
-  indexPattern: IndexPatternAttributes;
-  siren: {
-    parentId: string;
-    indexingScope?: IndexingScopeString;
-    samplingScriptId?: string;
-    ui: {
-      icon: string;
-      color: string;
-      shortDescription: string;
-      instanceLabelType?: string;
-      instanceLabelValue?: string;
-      instanceImageType?: string;
-      instanceImageValue?: string;
-    };
-    limits?: {
-      maxTimeRangeEnabled: boolean;
-      maxTimeRange: number;
-      maxTimeRangeUnit: string;
-      maxCardinalityEnabled: boolean;
-      maxCardinality: number;
-      maxCardinalityUnit: string;
-      maxJoinCardinalityEnabled: boolean;
-      maxJoinCardinality: number;
-      maxJoinCardinalityUnit: string;
-      maxJoinCardinalityApplyToSource: boolean;
-      maxJoinCardinalityApplyToTarget: boolean;
-    };
-    revision?: RevisionSettings;
-    highlight?: {
-      fields: string;
-    };
-    globalSearch: GlobalSearchSettings;
-    templateScripts: {
-      scriptIds: string[];
-    };
-  };
-  version: string;
-};
-
-export interface SavedSearchAttributes_14_0_0 extends Omit<SavedSearchAttributes_13_2_0, 'version' | 'test-multiple-syntax-example'> {
-  version: SavedObjectVersions;
-}
+interface Keyword extends String { keyword: string };
 
 export type SavedSearch_13_2_0 = {
-  attributes: SavedSearchAttributes_13_2_0;
+  attributes: {
+    title: string;
+    description?: string;
+    hits?: Range<0, 999>;
+    columns?: string;
+    sort?: string;
+    kibanaSavedObjectMeta: {
+      searchSourceJSON: string;
+    };
+    indexPattern: IndexPatternAttributes;
+    siren: {
+      parentId: Keyword;
+      indexingScope?: IndexingScopeString;
+      samplingScriptId?: string;
+      ui: {
+        icon: string;
+        color: string;
+        shortDescription: string;
+        instanceLabelType?: string;
+        instanceLabelValue?: string;
+        instanceImageType?: string;
+        instanceImageValue?: string;
+      };
+      limits?: {
+        maxTimeRangeEnabled: boolean;
+        maxTimeRange: number;
+        maxTimeRangeUnit: string;
+        maxCardinalityEnabled: boolean;
+        maxCardinality: number;
+        maxCardinalityUnit: string;
+        maxJoinCardinalityEnabled: boolean;
+        maxJoinCardinality: number;
+        maxJoinCardinalityUnit: string;
+        maxJoinCardinalityApplyToSource: boolean;
+        maxJoinCardinalityApplyToTarget: boolean;
+      };
+      revision?: RevisionSettings;
+      highlight?: {
+        fields: string;
+      };
+      globalSearch: GlobalSearchSettings;
+      templateScripts: {
+        scriptIds: string[];
+      };
+    };
+    version: string;
+  };
   isGlobal: boolean;
   version: string;
 }
 
 export type SavedSearch_14_0_0 = {
-  attributes: SavedSearchAttributes_14_0_0;
+  attributes: {
+    title: string;
+    description?: string;
+    hits?: Range<0, 999>;
+    columns?: string;
+    sort?: string;
+    kibanaSavedObjectMeta: {
+      searchSourceJSON: string;
+    };
+    indexPattern: IndexPatternAttributes;
+    siren: {
+      parentId: Keyword;
+      indexingScope?: IndexingScopeString;
+      samplingScriptId?: string;
+      ui: {
+        icon: string;
+        color: string;
+        shortDescription: string;
+        instanceLabelType?: string;
+        instanceLabelValue?: string;
+        instanceImageType?: string;
+        instanceImageValue?: string;
+      };
+      limits?: {
+        maxTimeRangeEnabled: boolean;
+        maxTimeRange: number;
+        maxTimeRangeUnit: string;
+        maxCardinalityEnabled: boolean;
+        maxCardinality: number;
+        maxCardinalityUnit: string;
+        maxJoinCardinalityEnabled: boolean;
+        maxJoinCardinality: number;
+        maxJoinCardinalityUnit: string;
+        maxJoinCardinalityApplyToSource: boolean;
+        maxJoinCardinalityApplyToTarget: boolean;
+      };
+      revision?: RevisionSettings;
+      highlight?: {
+        fields: string;
+      };
+      globalSearch: GlobalSearchSettings;
+      templateScripts: {
+        scriptIds: string[];
+      };
+    };
+    version: SavedObjectVersions;
+  };
   isGlobal: boolean;
   version: string;
 }
