@@ -17,7 +17,7 @@ import { SavedSearchService } from './saved_search_service'
 export class SavedSearchController_13_2_0 extends Controller {
   @SuccessResponse("201", "Created") // Custom success response
   @Post('create')
-  public async createSavedSearch(
+  public async createSavedSearch13_2_0(
     @Body() requestBody: SavedSearch_13_2_0
   ): Promise<string> {
     try {
@@ -36,7 +36,7 @@ export class SavedSearchController_13_2_0 extends Controller {
 export class SavedSearchController_14_0_0 extends Controller {
   @SuccessResponse("201", "Created") // Custom success response
   @Post('create')
-  public async createSavedSearch(
+  public async createSavedSearch_14_0_0(
     @Body() requestBody: SavedSearch_14_0_0
   ): Promise<string> {
     try {
