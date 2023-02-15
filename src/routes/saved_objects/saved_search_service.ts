@@ -1,5 +1,5 @@
 // src/users/usersService.ts
-import { AllSavedSearches } from './types';
+import { AllSavedSearches } from './saved_object_types/search';
 
 const exampleSavedSearch: any = { //: SavedSearch = { // enums mess up the types for some reason
   "attributes":{
