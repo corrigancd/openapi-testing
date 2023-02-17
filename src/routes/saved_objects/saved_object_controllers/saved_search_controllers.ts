@@ -18,7 +18,7 @@ import { SavedSearchService } from '../saved_search_service'
 export class SavedSearchController_13_2_0 extends Controller {
   @SuccessResponse("201", "Created") // Custom success response
   @Post('create')
-  @OperationId('14_0_0')
+  @OperationId('13_2_0')
   public async createSavedSearch(
     @Body() requestBody: SavedSearch_13_2_0
   ): Promise<string> {
