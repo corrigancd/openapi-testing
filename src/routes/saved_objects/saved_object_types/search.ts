@@ -47,7 +47,7 @@ export type SavedSearch_13_2_0 = {
     columns?: string;
     sort?: string;
     kibanaSavedObjectMeta: {
-      searchSourceJSON: string;
+      searchSourceJSON: string; //JSONValue
     };
     indexPattern: IndexPatternAttributes;
     siren: {
@@ -85,7 +85,7 @@ export type SavedSearch_13_2_0 = {
         scriptIds: Keyword[];
       };
     };
-    version: Keyword;
+    version: SavedObjectVersions;
   };
   isGlobal: boolean;
   version: string;
