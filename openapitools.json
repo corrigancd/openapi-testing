@@ -1,7 +1,28 @@
 {
-  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
-  "spaces": 2,
-  "generator-cli": {
-    "version": "6.3.0"
-  }
+	"$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+	"spaces": 2,
+	"generator-cli": {
+		"version": "6.3.0",
+		"storageDir": "./temp/openapi",
+		"generators": {
+			"python": {
+				"generatorName": "python",
+				"output": "../temp/python",
+				"glob": "./build/swagger.json",
+				"additionalProperties": {
+          "supportsES6": true,
+					"npmVersion": "8.19.3"
+				}
+			},
+      "javascript": {
+				"generatorName": "javascript",
+				"output": "../temp/javascript",
+				"glob": "./build/swagger.json",
+				"additionalProperties": {
+					"supportsES6": true,
+					"npmVersion": "8.19.3"
+				}
+			}
+		}
+	}
 }

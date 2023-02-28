@@ -16,7 +16,8 @@
 		"build": "tsoa spec-and-routes && tsc",
 		"start": "node --inspect build/src/server.js",
 		"dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
-		"showdocs": "@redocly/cli preview-docs build/swagger.json"
+		"showdocs": "@redocly/cli preview-docs build/swagger.json",
+		"sdk": "openapi-generator-cli generate"
 	},
 	"devDependencies": {
 		"@types/hapi__hapi": "20.x.x",
