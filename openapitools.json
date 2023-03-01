@@ -7,7 +7,7 @@
 		"generators": {
 			"python": {
 				"generatorName": "python",
-				"output": "../temp/python",
+				"output": "./temp/python",
 				"glob": "./build/swagger.json",
 				"additionalProperties": {
           "supportsES6": true,
@@ -16,7 +16,7 @@
 			},
       "javascript": {
 				"generatorName": "javascript",
-				"output": "../temp/javascript",
+				"output": "./temp/javascript",
 				"glob": "./build/swagger.json",
 				"additionalProperties": {
 					"supportsES6": true,

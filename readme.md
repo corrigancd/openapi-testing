@@ -23,3 +23,8 @@ Preview markdown file generated in `widdershins-output/openapi.md` as you would,
 
 ## Generating as adoc using @openapitools/openapi-generator-cli
 `npx @openapitools/openapi-generator-cli generate -i ./build/swagger.json -g asciidoc -o ./openapi-generator-cli-output`
+
+## Generating sdk
+`yarn sdk`
+The results will be in `./temp/<output-key-value-in-openapitools.json>`
+
