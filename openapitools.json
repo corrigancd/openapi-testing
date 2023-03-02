@@ -10,11 +10,11 @@
 				"output": "./temp/python",
 				"glob": "./build/swagger.json",
 				"additionalProperties": {
-          "supportsES6": true,
+					"supportsES6": true,
 					"npmVersion": "8.19.3"
 				}
 			},
-      "javascript": {
+			"javascript": {
 				"generatorName": "javascript",
 				"output": "./temp/javascript",
 				"glob": "./build/swagger.json",
